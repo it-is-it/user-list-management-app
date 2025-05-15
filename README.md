@@ -54,7 +54,7 @@ Each user profile includes:
 
 ## 📸 Screenshots
 
-> _Add screenshots of the UI showing Table, View, Edit, and Create screens._
+> _Adding screenshots of the UI showing Table, View, Edit, and Create screens later._
 
 ---
 
@@ -73,8 +73,6 @@ cd user-list-management-app
 npm install
 npm start
 ```
-
-````
 
 ---
 
@@ -110,4 +108,3 @@ This project is for educational and assessment purposes only.
 ---
 
 ### 👨‍💻 Developed by: Ishwor Timalsina
-````
