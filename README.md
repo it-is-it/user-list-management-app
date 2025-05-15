@@ -1,2 +1,116 @@
-# user-list-management-app
-A user management system built with React, styled using Tailwind CSS and components from Ant Design. This application allows users to view, add, update, and delete user profiles with proper routing and validations.
+Sure, Ishwor! Here's a professional and clean `README.md` file for your **User List Management App** built during the Leo Club CareerBridge Internship/Mentorship Campaign:
+
+---
+
+````markdown
+# User List Management App 🧑‍💼
+
+A React-based user management system built using **Ant Design** for UI components and styled with **Tailwind CSS**/**Bootstrap**. Developed as part of the **Front-End Developer Assessment** by Leo Club of Kathmandu Marigold under the CareerBridge Internship/Mentorship Campaign.
+
+---
+
+## ✨ Features
+
+- 📋 Display list of all users in a responsive table
+- 🟢 Color-coded user types (Admin/System User)
+- 🔍 View user details in a read-only form
+- ✏️ Edit and update user details
+- ➕ Create new users with validation
+- ❌ Delete existing users
+- 🚦 Route-based navigation for Create/View/Edit
+- ✅ Form validation for required fields
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend Framework**: React
+- **Component Library**: Ant Design
+- **Styling**: Tailwind CSS / Bootstrap (choose one)
+- **Routing**: React Router DOM
+
+---
+
+## 🧑‍💻 User Schema
+
+Each user profile includes:
+
+| Field        | Type   | Description                         |
+| ------------ | ------ | ----------------------------------- |
+| `userId`     | Number | Auto-generated unique ID            |
+| `firstName`  | String | User's first name                   |
+| `lastName`   | String | User's last name                    |
+| `userName`   | String | Unique user name                    |
+| `userType`   | Enum   | Admin User / System User            |
+| `department` | Enum   | Frontend / Backend / QA / Marketing |
+
+---
+
+## 📂 Pages & Routes
+
+| Route                  | View Description                        |
+| ---------------------- | --------------------------------------- |
+| `/`                    | User list with table and actions        |
+| `/user/create`         | Form to create a new user               |
+| `/user/view/:userId`   | Read-only user details                  |
+| `/user/update/:userId` | Editable user details and update button |
+
+---
+
+## 📸 Screenshots
+
+> _Add screenshots of the UI showing Table, View, Edit, and Create screens._
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js >= 18 (preferably latest LTS)
+- npm or yarn
+
+### Installation
+
+```bash
+git clone https://github.com/it-is-it/user-list-management-app.git
+cd user-list-management-app
+npm install
+npm start
+```
+````
+
+---
+
+## 📁 Project Structure (Sample)
+
+```
+user-list-management-app/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.js
+│   └── index.js
+├── tailwind.config.js / bootstrap.css
+├── package.json
+└── README.md
+```
+
+---
+
+## 📬 Submission Details
+
+- 🔗 [GitHub Repository](https://github.com/it-is-it/user-list-management-app)
+- 📄 Submitted to: Leo Club of Kathmandu Marigold
+- 🧠 Focus: Code structure, problem-solving approach, form validation, UI design
+
+---
+
+## 📃 License
+
+This project is for educational and assessment purposes only.
+
+---
+
+### 👨‍💻 Developed by: Ishwor Timalsina
