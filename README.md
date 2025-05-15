@@ -1,8 +1,3 @@
-Sure, Ishwor! Here's a professional and clean `README.md` file for your **User List Management App** built during the Leo Club CareerBridge Internship/Mentorship Campaign:
-
----
-
-````markdown
 # User List Management App 🧑‍💼
 
 A React-based user management system built using **Ant Design** for UI components and styled with **Tailwind CSS**/**Bootstrap**. Developed as part of the **Front-End Developer Assessment** by Leo Club of Kathmandu Marigold under the CareerBridge Internship/Mentorship Campaign.
@@ -78,6 +73,7 @@ cd user-list-management-app
 npm install
 npm start
 ```
+
 ````
 
 ---
@@ -114,3 +110,4 @@ This project is for educational and assessment purposes only.
 ---
 
 ### 👨‍💻 Developed by: Ishwor Timalsina
+````
