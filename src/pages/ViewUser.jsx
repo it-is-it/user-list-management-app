@@ -103,7 +103,7 @@ function ViewUser() {
 
         <Popconfirm
           title="Are you sure to delete this user?"
-          onConfirm={handleDelete} // ✅ Proper delete trigger
+          onConfirm={handleDelete}
           okText="Yes"
           cancelText="No"
         >
