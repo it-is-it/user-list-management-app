@@ -54,7 +54,11 @@ Each user profile includes:
 
 ## 📸 Screenshots
 
-> _Adding screenshots of the UI showing Table, View, Edit, and Create screens later._
+![User List Screenshot](./screenshot-1)
+![Create New User Screenshot](./screenshot-2)
+![View User Details Screenshot](./screenshot-3)
+![Edit User Details Screenshot](./screenshot-4)
+![Delete User Screenshot](./screenshot-5)
 
 ---
 
