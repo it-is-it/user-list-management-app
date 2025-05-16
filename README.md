@@ -55,9 +55,9 @@ Each user profile includes:
 ## 📸 Screenshots
 
 ![User List Screenshot](./public/screenshot-1.png)
-![Create New User Screenshot](./public/screenshot-2.png)
-![View User Details Screenshot](./public/screenshot-3.png)
-![Edit User Details Screenshot](./public/screenshot-4.png)
+![Create New User Screenshot](./public/Screenshot-2.png)
+![View User Details Screenshot](./public/Screenshot-3.png)
+![Edit User Details Screenshot](./public/Screenshot-4.png)
 ![Delete User Screenshot](./public/screenshot-5.png)
 
 ---
