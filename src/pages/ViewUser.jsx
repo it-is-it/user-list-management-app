@@ -87,8 +87,8 @@ function ViewUser() {
           <Descriptions.Item label="Department">
             {user.department}
           </Descriptions.Item>
-          <Descriptions.Item label="Created At">2024-05-01</Descriptions.Item>
-          <Descriptions.Item label="Last Updated">2024-05-12</Descriptions.Item>
+          <Descriptions.Item label="Created At">2025-05-01</Descriptions.Item>
+          <Descriptions.Item label="Last Updated">2025-05-17</Descriptions.Item>
         </Descriptions>
       </Card>
 
