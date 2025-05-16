@@ -1,46 +1,31 @@
 {
   "name": "user-list-management-app",
-  "description": "A simple user list management application built with React and tailwindcss.",
-  "author": "Ishwor Timalsina",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^2.8.2",
+    "@tailwindcss/vite": "^4.1.7",
     "antd": "^5.25.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-redux": "^9.2.0",
-    "react-router-dom": "^7.6.0"
+    "react-router-dom": "^7.6.0",
+    "tailwindcss": "^4.1.7"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.27.1",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@babel/preset-react": "^7.27.1",
-    "@eslint/js": "^9.26.0",
-    "@types/react": "^19.1.4",
-    "@types/react-dom": "^19.1.5",
+    "@eslint/js": "^9.25.0",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",
-    "autoprefixer": "^10.4.21",
-    "eslint": "^9.26.0",
-    "eslint-config-prettier": "^10.1.5",
-    "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-prettier": "^5.4.0",
-    "eslint-plugin-react": "^7.37.5",
+    "eslint": "^9.25.0",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.1.0",
-    "postcss": "^8.5.3",
-    "prettier": "^3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.11",
-    "tailwindcss": "^3.4.17",
-    "vite": "^6.3.5",
-    "vite-plugin-eslint": "^1.8.1"
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "globals": "^16.0.0",
+    "vite": "^6.3.5"
   }
 }
