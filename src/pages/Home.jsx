@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserTable from "../components/UserTable";
 import { UserContext } from "../context/UserContext";
+import { HiUserPlus } from "react-icons/hi2";
 
 const { Title, Paragraph } = Typography;
 
@@ -15,10 +16,10 @@ function Home() {
       <div className="max-w-6xl w-full">
         <div className="mb-8 flex flex-col md:flex-row items-center md:items-end justify-between">
           <div className="text-center md:text-left md:flex-1">
-            <Title level={2} className="mb-1">
-              User Management
+            <Title level={2} className="!text-blue-500 !mb-2 font-semibold">
+              User List Management WebApp
             </Title>
-            <Paragraph className="mb-0 text-gray-600 max-w-lg mx-auto md:mx-0">
+            <Paragraph className="mb-0 text-gray-600 max-w-lg mx-auto md:mx-0 md:ml-2">
               View, add, edit, and manage users easily.
             </Paragraph>
           </div>
@@ -26,9 +27,10 @@ function Home() {
             <Button
               type="primary"
               size="large"
-              className="border-blue-500 bg-blue-500 text-white hover:bg-white hover:text-blue-500"
+              className="border-blue-500 bg-blue-500 text-white hover:bg-white hover:text-blue-500 transition-colors duration-300"
               onClick={() => navigate("/user/create")}
             >
+              <HiUserPlus className="mr-2" />
               Add New User
             </Button>
           </div>

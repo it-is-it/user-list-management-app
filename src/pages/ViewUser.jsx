@@ -11,47 +11,52 @@ import {
 import {
   UserOutlined,
   EditOutlined,
-  DeleteOutlined,
   ArrowLeftOutlined,
 } from "@ant-design/icons";
 import { useNavigate, useParams } from "react-router-dom";
-import initialUsers from "../data/users";
+import { useContext, useEffect, useState } from "react";
+import { UserContext } from "../context/UserContext";
+import { HiTrash } from "react-icons/hi2";
 
-const { Title, Text } = Typography;
+const { Title, Text, Paragraph } = Typography;
 
 function ViewUser() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const user = initialUsers.find((u) => u.id === parseInt(id));
+  const { users, deleteUser } = useContext(UserContext);
+  const [user, setUser] = useState(null);
 
-  if (!user) return <p>User not found.</p>;
+  useEffect(() => {
+    const found = users.find((u) => u.id === Number(id));
+    setUser(found);
+  }, [users, id]);
+
+  if (!user) return <Paragraph>Loading user...</Paragraph>;
 
   const handleDelete = () => {
+    deleteUser(user.id); // ✅ Delete here only after confirmation
     message.success("User deleted successfully!");
     navigate("/");
   };
 
-  // Utility: Get initials for Avatar
   const getInitials = (firstName, lastName) =>
     `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase();
 
   return (
     <div className="p-8 max-w-3xl mx-auto">
       <div className="flex items-center justify-between mb-4">
-        <Button icon={<ArrowLeftOutlined />} onClick={() => navigate("/")}>
-          Back
-        </Button>
-        <Title level={3} className="!mb-0">
+        <div className="flex-1">
+          <Button icon={<ArrowLeftOutlined />} onClick={() => navigate("/")}>
+            Back
+          </Button>
+        </div>
+        <Title level={2} className="!text-blue-500 !mb-2 font-semibold">
           User Details
         </Title>
-        <div></div> {/* Spacer to center title */}
+        <div className="flex-1" />
       </div>
 
-      <Card
-        variant="outlined"
-        className="shadow-md"
-        style={{ borderRadius: "10px" }}
-      >
+      <Card className="shadow-md" style={{ borderRadius: "10px" }}>
         <div className="flex items-center gap-4 mb-6">
           <Avatar size={64} icon={<UserOutlined />}>
             {getInitials(user.firstName, user.lastName)}
@@ -98,12 +103,12 @@ function ViewUser() {
 
         <Popconfirm
           title="Are you sure to delete this user?"
-          onConfirm={handleDelete}
+          onConfirm={handleDelete} // ✅ Proper delete trigger
           okText="Yes"
           cancelText="No"
         >
-          <Button type="primary" danger icon={<DeleteOutlined />}>
-            Delete
+          <Button danger icon={<HiTrash />}>
+            Delete User
           </Button>
         </Popconfirm>
       </div>

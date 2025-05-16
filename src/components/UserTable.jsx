@@ -1,9 +1,28 @@
-import { Table, Tag, Button, Popconfirm } from "antd";
+import { Table, Tag, Button, Modal } from "antd";
 import { HiSquare2Stack, HiPencil, HiTrash } from "react-icons/hi2";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const UserTable = ({ users, onDelete }) => {
   const navigate = useNavigate();
+  const [deletingUserId, setDeletingUserId] = useState(null);
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const showDeleteConfirm = (userId) => {
+    setDeletingUserId(userId);
+    setIsModalVisible(true);
+  };
+
+  const handleDeleteConfirm = () => {
+    onDelete(deletingUserId);
+    setIsModalVisible(false);
+    setDeletingUserId(null);
+  };
+
+  const handleCancel = () => {
+    setIsModalVisible(false);
+    setDeletingUserId(null);
+  };
 
   const columns = [
     { title: "User Name", dataIndex: "userName" },
@@ -19,6 +38,7 @@ const UserTable = ({ users, onDelete }) => {
     { title: "Department", dataIndex: "department" },
     {
       title: "Action",
+      align: "center",
       render: (_, record) => (
         <div className="flex gap-2">
           <Button onClick={() => navigate(`/user/view/${record.id}`)}>
@@ -29,32 +49,40 @@ const UserTable = ({ users, onDelete }) => {
             <HiPencil />
             Edit
           </Button>
-          <Popconfirm
-            title="Sure to delete?"
-            onConfirm={() => onDelete(record.id)}
-            okText="Yes"
-            cancelText="No"
-          >
-            <Button danger>
-              <HiTrash />
-              Delete
-            </Button>
-          </Popconfirm>
+          <Button danger onClick={() => showDeleteConfirm(record.id)}>
+            <HiTrash />
+            Delete
+          </Button>
         </div>
       ),
     },
   ];
 
   return (
-    <Table
-      dataSource={users}
-      columns={columns}
-      rowKey="id"
-      pagination={{
-        pageSize: 5,
-        position: ["bottomCenter"],
-      }}
-    />
+    <>
+      <Table
+        dataSource={users}
+        columns={columns}
+        rowKey="id"
+        pagination={{
+          pageSize: 5,
+          position: ["bottomCenter"],
+        }}
+      />
+
+      <Modal
+        title="Confirm Deletion"
+        open={isModalVisible}
+        onOk={handleDeleteConfirm}
+        onCancel={handleCancel}
+        okText="Yes"
+        cancelText="No"
+        centered
+        maskClosable={false}
+      >
+        <p>Are you sure you want to delete this user?</p>
+      </Modal>
+    </>
   );
 };
 
