@@ -1,16 +1,22 @@
-import UserForm from '../components/UserFrom';
+import { useContext } from "react";
+import UserForm from "../components/UserForm";
+import { UserContext } from "../context/UserContext";
+import { message } from "antd";
 
 function CreateUser() {
-  const handleCreate = (values) => {
-    console.log('Creating user with values:', values);
-    // Call your create logic here
+  const { createUser } = useContext(UserContext);
+
+  const handleSubmit = (user) => {
+    createUser(user);
+    message.success("User created successfully");
   };
 
   return (
-    <div className="p-4">
-      <h2 className="mb-4 text-2xl font-semibold">Create New User</h2>
-      <UserForm onFinish={handleCreate} />
-    </div>
+    <UserForm
+      initialValues={{}} // empty for create
+      onFinish={handleSubmit}
+      isDisabled={false}
+    />
   );
 }
 

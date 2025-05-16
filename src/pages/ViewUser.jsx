@@ -1,57 +1,114 @@
-// components/UserForm.jsx
-import { Form, Input, Select, Button } from 'antd';
+import {
+  Card,
+  Descriptions,
+  Typography,
+  Avatar,
+  Badge,
+  Button,
+  Popconfirm,
+  message,
+} from "antd";
+import {
+  UserOutlined,
+  EditOutlined,
+  DeleteOutlined,
+  ArrowLeftOutlined,
+} from "@ant-design/icons";
+import { useNavigate, useParams } from "react-router-dom";
+import initialUsers from "../data/users";
 
-const UserForm = ({ onFinish, initialValues, isDisabled }) => {
-  const [form] = Form.useForm();
+const { Title, Text } = Typography;
+
+function ViewUser() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const user = initialUsers.find((u) => u.id === parseInt(id));
+
+  if (!user) return <p>User not found.</p>;
+
+  const handleDelete = () => {
+    message.success("User deleted successfully!");
+    navigate("/");
+  };
+
+  // Utility: Get initials for Avatar
+  const getInitials = (firstName, lastName) =>
+    `${firstName.charAt(0)}${lastName.charAt(0)}`.toUpperCase();
 
   return (
-    <Form
-      form={form}
-      layout="vertical"
-      onFinish={onFinish}
-      initialValues={initialValues}
-    >
-      <Form.Item
-        name="firstName"
-        label="First Name"
-        rules={[{ required: true }]}
-      >
-        <Input disabled={isDisabled} />
-      </Form.Item>
-      <Form.Item name="lastName" label="Last Name" rules={[{ required: true }]}>
-        <Input disabled={isDisabled} />
-      </Form.Item>
-      <Form.Item name="userName" label="User Name" rules={[{ required: true }]}>
-        <Input disabled={isDisabled} />
-      </Form.Item>
-      <Form.Item name="userType" label="User Type" rules={[{ required: true }]}>
-        <Select disabled={isDisabled}>
-          <Select.Option value="Admin User">Admin User</Select.Option>
-          <Select.Option value="System User">System User</Select.Option>
-        </Select>
-      </Form.Item>
-      <Form.Item
-        name="department"
-        label="Department"
-        rules={[{ required: true }]}
-      >
-        <Select disabled={isDisabled}>
-          <Select.Option value="Frontend">Frontend</Select.Option>
-          <Select.Option value="Backend">Backend</Select.Option>
-          <Select.Option value="QA">QA</Select.Option>
-          <Select.Option value="Marketing">Marketing</Select.Option>
-        </Select>
-      </Form.Item>
+    <div className="p-8 max-w-3xl mx-auto">
+      <div className="flex items-center justify-between mb-4">
+        <Button icon={<ArrowLeftOutlined />} onClick={() => navigate("/")}>
+          Back
+        </Button>
+        <Title level={3} className="!mb-0">
+          User Details
+        </Title>
+        <div></div> {/* Spacer to center title */}
+      </div>
 
-      {!isDisabled && (
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            Submit
+      <Card
+        variant="outlined"
+        className="shadow-md"
+        style={{ borderRadius: "10px" }}
+      >
+        <div className="flex items-center gap-4 mb-6">
+          <Avatar size={64} icon={<UserOutlined />}>
+            {getInitials(user.firstName, user.lastName)}
+          </Avatar>
+          <div>
+            <Text strong className="text-lg">
+              {user.firstName} {user.lastName}
+            </Text>
+            <div>
+              <Badge status="success" text="Active" />
+            </div>
+          </div>
+        </div>
+
+        <Descriptions column={1} bordered size="middle">
+          <Descriptions.Item label="User Name">
+            {user.userName}
+          </Descriptions.Item>
+          <Descriptions.Item label="First Name">
+            {user.firstName}
+          </Descriptions.Item>
+          <Descriptions.Item label="Last Name">
+            {user.lastName}
+          </Descriptions.Item>
+          <Descriptions.Item label="User Type">
+            {user.userType}
+          </Descriptions.Item>
+          <Descriptions.Item label="Department">
+            {user.department}
+          </Descriptions.Item>
+          <Descriptions.Item label="Created At">2024-05-01</Descriptions.Item>
+          <Descriptions.Item label="Last Updated">2024-05-12</Descriptions.Item>
+        </Descriptions>
+      </Card>
+
+      <div className="flex gap-3 mt-6 justify-end">
+        <Button
+          type="primary"
+          icon={<EditOutlined />}
+          onClick={() => navigate(`/user/edit/${user.id}`)}
+        >
+          Edit
+        </Button>
+
+        <Popconfirm
+          title="Are you sure to delete this user?"
+          onConfirm={handleDelete}
+          okText="Yes"
+          cancelText="No"
+        >
+          <Button type="primary" danger icon={<DeleteOutlined />}>
+            Delete
           </Button>
-        </Form.Item>
-      )}
-    </Form>
+        </Popconfirm>
+      </div>
+    </div>
   );
-};
+}
 
-export default UserForm;
+export default ViewUser;
