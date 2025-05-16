@@ -1,16 +1,17 @@
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import CreateUser from './pages/CreateUser';
+import EditUser from './pages/EditUser';
+import ViewUser from './pages/ViewUser';
+
 function App() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600">
-      <div className="rounded-2xl bg-white p-10 text-center shadow-xl">
-        <h1 className="mb-4 text-3xl font-bold text-gray-800">
-          🎉 Tailwind CSS is Working!
-        </h1>
-        <p className="text-gray-600">
-          If you can see this styled box, you&apos;re all set. Now go build
-          something awesome!
-        </p>
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/user/create" element={<CreateUser />} />
+      <Route path="/user/edit/:id" element={<EditUser />} />
+      <Route path="/user/view/:id" element={<ViewUser />} />
+    </Routes>
   );
 }
 

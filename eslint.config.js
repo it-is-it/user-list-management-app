@@ -16,6 +16,11 @@ export default [
         ...globals.node,
       },
       parserOptions: {
+        ecmaVersion: 'latest',
+        sourceType: 'module',
+        ecmaFeatures: {
+          jsx: true,
+        },
         requireConfigFile: false,
         babelOptions: {
           presets: ['@babel/preset-react'],
@@ -33,7 +38,10 @@ export default [
       },
     },
     rules: {
-      'no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      'no-unused-vars': [
+        'warn',
+        { argsIgnorePattern: '^_', varsIgnorePattern: 'React|App' },
+      ],
       quotes: ['warn', 'single', { avoidEscape: true }],
       'react/prop-types': 'off',
       'react-refresh/only-export-components': [
