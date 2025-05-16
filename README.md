@@ -6,23 +6,23 @@ A React-based user management system built using **Ant Design** for UI component
 
 ## ✨ Features
 
-- 📋 Display list of all users in a responsive table
-- 🟢 Color-coded user types (Admin/System User)
+- 📋 Display a list of all users in a responsive table
+- 🟢 Color-coded user types (Admin User / System User)
 - 🔍 View user details in a read-only form
 - ✏️ Edit and update user details
 - ➕ Create new users with validation
-- ❌ Delete existing users
-- 🚦 Route-based navigation for Create/View/Edit
+- ❌ Delete existing users with confirmation popups
+- 🚦 Route-based navigation for Create / View / Edit pages
 - ✅ Form validation for required fields
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework**: React
-- **Component Library**: Ant Design
-- **Styling**: Tailwind CSS / Bootstrap (choose one)
-- **Routing**: React Router DOM
+- **Frontend Framework:** React
+- **Component Library:** Ant Design
+- **Styling:** Tailwind CSS or Bootstrap (choose one)
+- **Routing:** React Router DOM
 
 ---
 
@@ -32,7 +32,7 @@ Each user profile includes:
 
 | Field        | Type   | Description                         |
 | ------------ | ------ | ----------------------------------- |
-| `userId`     | Number | Auto-generated unique ID            |
+| `id`         | Number | Auto-generated unique ID            |
 | `firstName`  | String | User's first name                   |
 | `lastName`   | String | User's last name                    |
 | `userName`   | String | Unique user name                    |
@@ -43,21 +43,21 @@ Each user profile includes:
 
 ## 📂 Pages & Routes
 
-| Route                  | View Description                        |
-| ---------------------- | --------------------------------------- |
-| `/`                    | User list with table and actions        |
-| `/user/create`         | Form to create a new user               |
-| `/user/view/:userId`   | Read-only user details                  |
-| `/user/update/:userId` | Editable user details and update button |
+| Route            | Description                      |
+| ---------------- | -------------------------------- |
+| `/`              | User list with table and actions |
+| `/user/create`   | Form to create a new user        |
+| `/user/view/:id` | Read-only user details           |
+| `/user/edit/:id` | Editable user details and update |
 
 ---
 
 ## 📸 Screenshots
 
-![User List Screenshot](./public/screenshot-1.png)
-![Create New User Screenshot](./public/Screenshot-2.png)
-![View User Details Screenshot](./public/Screenshot-3.png)
-![Edit User Details Screenshot](./public/Screenshot-4.png)
+![User List Screenshot](./public/screenshot-1.png)  
+![Create New User Screenshot](./public/screenshot-2.png)  
+![View User Details Screenshot](./public/screenshot-3.png)  
+![Edit User Details Screenshot](./public/screenshot-4.png)  
 ![Delete User Screenshot](./public/screenshot-5.png)
 
 ---
@@ -85,8 +85,12 @@ npm start
 ```
 user-list-management-app/
 ├── public/
+│   ├── screenshots/
+│   └── index.html
 ├── src/
 │   ├── components/
+│   ├── context/
+│   ├── data/
 │   ├── pages/
 │   ├── App.js
 │   └── index.js
@@ -101,7 +105,7 @@ user-list-management-app/
 
 - 🔗 [GitHub Repository](https://github.com/it-is-it/user-list-management-app)
 - 📄 Submitted to: Leo Club of Kathmandu Marigold
-- 🧠 Focus: Code structure, problem-solving approach, form validation, UI design
+- 🧠 Focus: Code structure, problem-solving, form validation, UI design
 
 ---
 
