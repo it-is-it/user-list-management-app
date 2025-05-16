@@ -54,11 +54,11 @@ Each user profile includes:
 
 ## 📸 Screenshots
 
-![User List Screenshot](./screenshot-1)
-![Create New User Screenshot](./screenshot-2)
-![View User Details Screenshot](./screenshot-3)
-![Edit User Details Screenshot](./screenshot-4)
-![Delete User Screenshot](./screenshot-5)
+![User List Screenshot](./public/screenshot-1.png)
+![Create New User Screenshot](./public/screenshot-2.png)
+![View User Details Screenshot](./public/screenshot-3.png)
+![Edit User Details Screenshot](./public/screenshot-4.png)
+![Delete User Screenshot](./public/screenshot-5.png)
 
 ---
 
