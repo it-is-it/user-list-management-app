@@ -27,9 +27,21 @@ export function UserProvider({ children }) {
     setUsers((prevUsers) => prevUsers.filter((user) => user.id !== id));
   };
 
+  const resetUsers = () => {
+    localStorage.removeItem("users");
+    setUsers(initialUsers);
+  };
+
   return (
     <UserContext.Provider
-      value={{ users, createUser, setUsers, updateUser, deleteUser }}
+      value={{
+        users,
+        createUser,
+        setUsers,
+        updateUser,
+        deleteUser,
+        resetUsers,
+      }}
     >
       {children}
     </UserContext.Provider>
