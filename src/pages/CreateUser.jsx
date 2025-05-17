@@ -20,7 +20,6 @@ function CreateUser() {
   return (
     <div className="min-h-screen bg-stone-100 px-4 py-10">
       <div className="mx-auto max-w-2xl p-6 rounded-xl">
-        {/* Header with back button and centered title */}
         <div className="relative mb-6 flex items-center justify-between">
           <Button
             icon={<ArrowLeftOutlined />}
@@ -37,7 +36,6 @@ function CreateUser() {
           </Title>
         </div>
 
-        {/* User Card Form */}
         <Card className="shadow-lg border border-gray-100 rounded-2xl bg-white px-4 py-8">
           <div className="mb-8 text-center">
             <Paragraph className="text-gray-600">
