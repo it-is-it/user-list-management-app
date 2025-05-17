@@ -2,6 +2,10 @@
 
 A React-based user management system built using **Ant Design** for UI components and styled with **Tailwind CSS**. Developed as part of the **Front-End Developer Assessment** by Leo Club of Kathmandu Marigold under the CareerBridge Internship/Mentorship Campaign.
 
+## 🔗 Live Demo
+
+[Click here to view the live app](https://user-list-management-app.vercel.app/)
+
 ---
 
 ## ✨ Features
