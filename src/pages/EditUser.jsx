@@ -4,7 +4,6 @@ import { UserOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 import UserForm from "../components/UserForm";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
-import UserTable from "../components/UserTable";
 
 const { Title, Text } = Typography;
 

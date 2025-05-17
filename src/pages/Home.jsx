@@ -14,7 +14,6 @@ function Home() {
   return (
     <div className="min-h-screen bg-gray-100 px-6 py-10 flex justify-center">
       <div className="max-w-6xl w-full">
-        {/* Header Section */}
         <div className="mb-8 flex flex-col md:flex-row items-center md:items-end justify-between">
           <div className="text-center md:text-left md:flex-1">
             <Title level={2} className="!text-blue-500 !mb-2 font-semibold">

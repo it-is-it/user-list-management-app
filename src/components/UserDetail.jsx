@@ -1,4 +1,3 @@
-// components/UserDetail.jsx
 import { Descriptions, Button } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 
