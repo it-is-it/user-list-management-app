@@ -45,42 +45,71 @@ function UserForm({ initialValues = {}, onFinish, isDisabled }) {
           <Form.Item
             label="User Name"
             name="userName"
-            rules={[{ required: true, message: "Please enter the user name" }]}
+            rules={[
+              { required: true, message: "Please enter the user name" },
+              { min: 3, message: "User name must be at least 3 characters" },
+              {
+                whitespace: true,
+                message: "User name cannot be empty or spaces only",
+              },
+            ]}
           >
             <Input />
           </Form.Item>
+
           <Form.Item
             label="First Name"
             name="firstName"
-            rules={[{ required: true, message: "Please enter the first name" }]}
+            rules={[
+              { required: true, message: "Please enter the first name" },
+              {
+                pattern: /^[A-Za-z\s]+$/,
+                message: "Only letters and spaces allowed",
+              },
+              { min: 2, message: "First name must be at least 2 characters" },
+            ]}
           >
             <Input />
           </Form.Item>
+
           <Form.Item
             label="Last Name"
             name="lastName"
-            rules={[{ required: true, message: "Please enter the last name" }]}
+            rules={[
+              { required: true, message: "Please enter the last name" },
+              {
+                pattern: /^[A-Za-z\s]+$/,
+                message: "Only letters and spaces allowed",
+              },
+              { min: 2, message: "Last name must be at least 2 characters" },
+            ]}
           >
             <Input />
           </Form.Item>
+
           <Form.Item
             label="User Type"
             name="userType"
-            rules={[{ required: true, message: "Please select the user type" }]}
+            rules={[
+              { required: true, message: "Please select the user type" },
+              { type: "string", message: "Invalid user type" },
+            ]}
           >
-            <Select>
+            <Select placeholder="Select a user type">
               <Option value="Admin User">Admin User</Option>
               <Option value="System User">System User</Option>
             </Select>
           </Form.Item>
+
           <Form.Item
             label="Department"
             name="department"
             rules={[
               { required: true, message: "Please select the department" },
+              { type: "string", message: "Invalid department" },
             ]}
           >
-            <Select>
+            <Select placeholder="Select a department">
               <Option value="Frontend">Frontend</Option>
               <Option value="Backend">Backend</Option>
               <Option value="QA">QA</Option>
